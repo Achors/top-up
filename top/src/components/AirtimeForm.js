@@ -4,6 +4,14 @@ import { useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 
+// Set up base URL for API requests
+const api = axios.create({
+  baseURL: 'http://localhost:3002', // Backend server URL
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
 const Airtime = () => {
   const [selectedProvider, setSelectedProvider] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -51,7 +59,7 @@ const Airtime = () => {
       setErrors(validationErrors);
     } else {
       try {
-        const response = await axios.post('http://localhost:3002/airtime/purchase', {
+        const response = await api.post('/airtime/purchase', {
           provider: selectedProvider,
           phoneNumber: phoneNumber, 
           amount: parseInt(amount, 10),
