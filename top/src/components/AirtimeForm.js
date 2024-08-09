@@ -112,7 +112,7 @@ const Airtime = () => {
             value={phoneNumber}
             onChange={handlePhoneChange}
             placeholder="+254 xxx xxx xxx"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 font-medium text-slate-900 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           />
           {errors.phoneNumber && (
             <p className="text-red-600 text-sm mt-1">{errors.phoneNumber}</p>
@@ -132,7 +132,7 @@ const Airtime = () => {
             value={amount}
             onChange={handleAmountChange}
             placeholder="Enter amount"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 font-medium text-slate-900 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           />
           {errors.amount && (
             <p className="text-red-600 text-sm mt-1">{errors.amount}</p>
