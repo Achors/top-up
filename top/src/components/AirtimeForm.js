@@ -4,9 +4,9 @@ import { useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 
-// Set up base URL for API requests
+
 const api = axios.create({
-  baseURL: 'http://localhost:3002', // Backend server URL
+  baseURL: 'http://localhost:3002', 
   headers: {
     'Content-Type': 'application/json',
   },
@@ -67,6 +67,11 @@ const Airtime = () => {
 
         console.log('Airtime purchased successfully:', response.data);
         setShowSuccessImage(true);
+        //clearing form field
+        setSelectedProvider('');
+        setPhoneNumber('');
+        setAmount('');
+        setErrors({});
       } catch (error) {
         console.error('There was an error processing the airtime purchase:', error.response?.data || error.message);
       }
@@ -93,7 +98,7 @@ const Airtime = () => {
               className={`p-1 rounded-lg ${selectedProvider === 'Safaricom' ? 'border-2 border-green-600' : ''}`}
               onClick={() => handleProviderClick('Safaricom')}
             >
-              <Image src="/Safaricom.png" alt="Safaricom Logo" width={50} height={30} />
+              <Image src="/Safaricom.png" alt="Safaricom Logo" width={50} height={30} style={{height:'auto'}} />
             </div>
             <div
               className={`p-1 rounded-lg ${selectedProvider === 'Airtel' ? 'border-2 border-green-600' : ''}`}
